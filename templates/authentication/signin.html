@@ -1,0 +1,33 @@
+{% extends 'authentication/base.html' %}
+
+{% block title %}
+    SignIn
+{% endblock %}
+
+
+{% block content %}
+    <h3>SignIn</h3>
+
+    <form action="/signin" method="post">
+        {% csrf_token %}
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Enter your Username (Only letters and numbers)" required>
+        <br>
+        <br>
+
+        
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter your password" required minlength="6">
+        <br>
+        <br>
+        
+
+        <button type="submit">Sign In</button>
+
+    </form>
+    <br><br>
+
+    <button type="submit"> <a href="/signout">SignOut</a> </button>
+
+{% endblock  %}
